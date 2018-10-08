@@ -22,4 +22,13 @@ class Patient
     end 
   end 
   
+  def doctors 
+    doctor_array = []
+    Appointment.all.each do |app|
+      if app.patient == self 
+        doctor_array <<  app.doctor 
+      end 
+    end 
+  end 
+  
 end 
